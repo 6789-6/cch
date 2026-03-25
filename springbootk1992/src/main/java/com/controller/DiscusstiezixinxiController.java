@@ -143,6 +143,7 @@ public class DiscusstiezixinxiController {
     public R add(@RequestBody DiscusstiezixinxiEntity discusstiezixinxi, HttpServletRequest request){
     	discusstiezixinxi.setId(new Date().getTime()+new Double(Math.floor(Math.random()*1000)).longValue());
     	//ValidatorUtils.validateEntity(discusstiezixinxi);
+    	discusstiezixinxi.setUserid((Long)request.getSession().getAttribute("userId"));
         discusstiezixinxiService.insert(discusstiezixinxi);
         return R.ok();
     }
