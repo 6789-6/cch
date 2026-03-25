@@ -226,8 +226,7 @@ public class TiezixinxiController {
     public R autoSort(@RequestParam Map<String, Object> params,TiezixinxiEntity tiezixinxi, HttpServletRequest request,String pre){
         EntityWrapper<TiezixinxiEntity> ew = new EntityWrapper<TiezixinxiEntity>();
         Map<String, Object> newMap = new HashMap<String, Object>();
-        Map<String, Object> param = new HashMap<String, Object>();
-		Iterator<Map.Entry<String, Object>> it = param.entrySet().iterator();
+		Iterator<Map.Entry<String, Object>> it = params.entrySet().iterator();
 		while (it.hasNext()) {
 			Map.Entry<String, Object> entry = it.next();
 			String key = entry.getKey();

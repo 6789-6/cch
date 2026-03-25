@@ -147,6 +147,7 @@ public class StoreupController {
     public R add(@RequestBody StoreupEntity storeup, HttpServletRequest request){
     	storeup.setId(new Date().getTime()+new Double(Math.floor(Math.random()*1000)).longValue());
     	//ValidatorUtils.validateEntity(storeup);
+    	storeup.setUserid((Long)request.getSession().getAttribute("userId"));
         storeupService.insert(storeup);
         return R.ok();
     }

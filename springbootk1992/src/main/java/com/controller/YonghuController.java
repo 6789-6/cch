@@ -207,7 +207,6 @@ public class YonghuController {
 		if(u!=null) {
 			return R.error("用户已存在");
 		}
-		yonghu.setId(new Date().getTime());
                 yonghu.setMima(MD5Util.md5(yonghu.getMima())); 
         yonghuService.insert(yonghu);
         return R.ok();
@@ -224,7 +223,6 @@ public class YonghuController {
 		if(u!=null) {
 			return R.error("用户已存在");
 		}
-		yonghu.setId(new Date().getTime());
                 yonghu.setMima(MD5Util.md5(yonghu.getMima()));
         yonghuService.insert(yonghu);
         return R.ok();
